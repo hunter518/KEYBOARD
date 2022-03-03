@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(15, 5, 35, 1);
+}
+.container{
+    /* border: 2px solid cyan; */
+    padding: 10px;
+    border-radius: 15px;
+    width: 500px;
+    color: cyan;
+    box-shadow: 0px 0px 15px cyan;
+    animation: changer 4s linear infinite;
+}
+.container.stop{
+    animation: none;
+}
+@keyframes changer {
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+.container h1{
+    text-align: center;
+    color: cyan;
+}
+.container .code{
+    border-radius: 50%;
+    border: 2px solid cyan;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    color: cyan;
+    font-size: 2em;
+    line-height: 200px;
+}
+.container .name{
+    text-transform: uppercase;
+    color: cyan;
+    margin: 10px 0;
+}
+.container .span{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+.container .span .dash{
+    position: relative;
+    transform: translateY(-10px);
+    color: rgb(219, 106, 0);
+    font-size: 2em;
+}
+button{
+    position: absolute;
+    top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: bolder;
+    font-size: 1.2em;
+    background: rgb(255, 0, 179);
+}
+button:hover{
+    cursor: pointer;
+ transform: translateY(-3px);
+ box-shadow: 0px 2px 5px rgb(255, 0, 179);
+}

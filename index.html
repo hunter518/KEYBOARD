@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="stop()">STOP</button>
+    <div class="container">
+        <h1>Enter Any Key</h1>
+        <div class="code"><h1>....</h1></div>
+        <div class="name"><h1 id="name">....</h1></div>
+        <div class="span"><div class="code-span">Key Code: <span>....</span></div>
+        <div class="dash">|</div><div class="name-span">Key Name:<span>....</span></div></div>
+    </div>
+    <script>
+        var keycode = document.querySelector('.code h1');
+        var key = document.querySelector('#name');
+        var code_span = document.querySelector('.code-span span');
+        var name_span = document.querySelector('.name-span span');
+        var box = document.querySelector('.container');
+        function stop(){
+            box.classList.toggle('stop')
+            if(box.classList.contains('stop')){
+                document.querySelector('button').innerHTML = 'START';
+            }
+            else{
+                document.querySelector('button').innerHTML = 'STOP';
+            }
+            
+        }
+        document.addEventListener('keyup', e =>{
+            keycode.innerHTML = e.keyCode;
+            code_span.innerHTML = e.keyCode;
+            key.innerHTML = e.key;
+            name_span.innerHTML = e.key;
+        })
+
+    </script>
+</body>
+</html>
